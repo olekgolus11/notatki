@@ -62,6 +62,7 @@ shm_unlink(<file_name>);
 # Bardziej szczegółówe opisy funkcji
 ## `shm_open`
 ### Flags
+Korzystamy z sumy bitowej `|` pomiędzy flagami
 - `O_RDONLY` - obiekt można tylko czytać
 - `O_RDWR` - obiekt można czytać i modyfikować
 - `O_CREAT` - tworzy obiekt jeśli nie istnieje, lub go otwiera
@@ -74,4 +75,13 @@ shm_unlink(<file_name>);
 - `>= 0` - jeśli sukces
 - `-1` - jeśli błąd
 ## `mmap`
-### 
+### Address
+Raczej `NULL` - oddajemy systemowi wybór, gdzie tą pamięć wrzucić
+### Offset
+Raczej `0` - nie ma co kręcić, jeśli inaczej to wielokrotność wielkości strony - `n * 4096`
+### Protection
+Korzystamy z sumy bitowej `|` pomiędzy parametrami
+- `PROT_EXEC` - Dane w mapowanych stronach można wykonywać
+- `PROT_READ` - Dane w mapowanych stronach można odczytywać
+- `PROT_WRITE` - Dane w mapowanych stronach można modyfikować
+- `PROT_NONE` - Mapowane strony są niedostępne
