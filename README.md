@@ -53,6 +53,11 @@ Funkcja odmapowująca nasz obiekt z pamięci:
 munmap(<pointer_to_structure>, <size_of_structure>);
 ```
 
+Funkcja zamykająca nasz plik:
+```c
+close(<file_descriptor>);
+```
+
 Funkcja usuwająca pamięć współdzieloną:
 ```c
 shm_unlink(<file_name>);
