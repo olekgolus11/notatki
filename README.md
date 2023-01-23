@@ -85,3 +85,5 @@ Korzystamy z sumy bitowej `|` pomiędzy parametrami
 - `PROT_READ` - Dane w mapowanych stronach można odczytywać
 - `PROT_WRITE` - Dane w mapowanych stronach można modyfikować
 - `PROT_NONE` - Mapowane strony są niedostępne
+### Flags
+- `MAP_SHARED` - Współdzielenie wskazanego obszaru (tylko to nas obchodzi)
