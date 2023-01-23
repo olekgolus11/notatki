@@ -15,7 +15,7 @@
 ```
 
 ### CMakeLists:
-```c
+```
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package( Threads REQUIRED )
 target_link_libraries(<catalogue_name> PRIVATE Threads::Threads librt.so)
@@ -57,3 +57,19 @@ Funkcja usuwająca pamięć współdzieloną:
 ```c
 shm_unlink(<file_name>);
 ```
+
+---
+# Bardziej szczegółówe opisy funkcji
+## `shm_open`
+### Flags
+- `O_RDONLY` - obiekt można tylko czytać
+- `O_RDWR` - obiekt można czytać i modyfikować
+- `O_CREAT` - tworzy obiekt jeśli nie istnieje, lub go otwiera
+- `O_CREAT | O_EXCL` - tworzy nowy obiekt lub zwraca błąd jeśli taki istnieje
+- `O_CREAT | O_RDWR` - tworzymy obiekt który możemy edytować
+### Modes
+- `0666` - każdy ma dostęp
+- `0600` - tylko właściciel
+### Return value
+- `>= 0` - jeśli sukces
+- `-1` - jeśli błąd
