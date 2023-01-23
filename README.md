@@ -29,7 +29,7 @@ gcc -pthread -lrt <source_file> -o <output_file>
 
 # Postawienie pamięci współdzielonej
 
-Do postawienia pamięci korzystamy z 3 funkcji:
+Do postawienia pamięci korzystamy z 3 funkcji (najlepiej w tej kolejności):
 
 Funkcja tworząca pamięć współdzieloną:
 ```c
