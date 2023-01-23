@@ -58,6 +58,19 @@ Funkcja usuwająca pamięć współdzieloną:
 shm_unlink(<file_name>);
 ```
 
+# Semafory
+Ścieżka semaforu nienazwanego:
+```c
+sem_t my_sem;
+sem_init(&my_sem, <shared?>, <start_value>);
+```
+
+Ścieżka semaforu nazwanego:
+```c
+sem_t* my_sem = sem_open(<sem_name>, <flag (O_CREAT)>, <mode>, <start_value>);
+sem_close(my_sem);
+```
+
 ---
 # Bardziej szczegółówe opisy funkcji
 ## `shm_open`
