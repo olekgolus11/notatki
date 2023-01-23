@@ -1,3 +1,32 @@
+# Potrzebne narzędzia
+
+### Biblioteki:
+```c
+#include <stdio.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <semaphore.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <string.h>
+```
+
+### CMakeLists:
+```c
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package( Threads REQUIRED )
+target_link_libraries(<catalogue_name> PRIVATE Threads::Threads librt.so)
+```
+
+### Komenda do manualnej kompilacji:
+```
+gcc -pthread -lrt <source_file> -o <output_file>
+```
+
+
 # Postawienie pamięci współdzielonej
 
 Do postawienia pamięci korzystamy z 3 funkcji:
