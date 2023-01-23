@@ -43,7 +43,7 @@ ftruncate(<file_descriptor>, <size of structure>);
 
 Funkcja mapująca nasz obiekt na tę pamięć:
 ```c
-struct My_structure* my_structure = mmap(<address>, <size of structure>, <protection flags>, <file_descriptor>, <offset>);
+struct My_structure* my_structure = mmap(<address>, <size of structure>, <protection>, <flags>, <file_descriptor>, <offset>);
 ```
 
 # Usunięcie pamięci współdzielonej:
@@ -73,3 +73,5 @@ shm_unlink(<file_name>);
 ### Return value
 - `>= 0` - jeśli sukces
 - `-1` - jeśli błąd
+## `mmap`
+### 
